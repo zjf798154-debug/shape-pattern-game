@@ -1,0 +1,12 @@
+{
+  "name": "shape-pattern-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "一年级图形规律找规律小游戏，100 道进阶题",
+  "scripts": {
+    "gen": "node tools/gen-questions.mjs",
+    "check": "node tools/check-questions.mjs",
+    "serve": "python3 -m http.server 8787"
+  },
+  "license": "MIT"
+}
