@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>图形规律大挑战 · 一年级进阶版</title>
+  <meta name="description" content="为一年级小朋友设计的找图形规律小游戏，100 道进阶题，练习观察力和逻辑思维。" />
+  <meta name="theme-color" content="#eef2ff" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%236366f1'/%3E%3Cpath d='M50 18 82 50 50 82 18 50Z' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>图形规律</span>
+      </div>
+      <div class="top-actions">
+        <button id="btn-exit" class="icon-btn hidden" type="button" title="退出到首页" aria-label="退出到首页">✕</button>
+        <button id="btn-sound" class="icon-btn" type="button" title="音效开关" aria-label="音效开关">🔊</button>
+      </div>
+    </header>
+
+    <section id="screen-start" class="screen active">
+      <div class="hero">
+        <div class="hero-pattern" id="hero-pattern" aria-hidden="true"></div>
+        <h1 class="title">找图形规律<span class="title-badge">进阶</span></h1>
+        <p class="subtitle">100 道题 · 一年级观察力挑战</p>
+        <div class="pills">
+          <span class="pill">3~4 个一组</span>
+          <span class="pill">双重规律</span>
+          <span class="pill">数量变化</span>
+        </div>
+        <div class="start-actions">
+          <button id="btn-start" class="btn btn-primary" type="button">开始挑战</button>
+          <button id="btn-continue" class="btn btn-ghost hidden" type="button">继续上次</button>
+        </div>
+        <p class="hint">答错没关系，每一题都会告诉你规律 ✨</p>
+        <p class="hint small" id="save-hint"></p>
+        <p class="from-note">Developed with Codex</p>
+      </div>
+    </section>
+
+    <section id="screen-game" class="screen">
+      <div class="game-head">
+        <div class="counter">
+          <span id="game-mode" class="mode-chip hidden">错题重练</span>
+          第 <b id="q-index">1</b> / <span id="q-total">100</span> 题
+        </div>
+        <div class="score-chip" title="答对题数"><span aria-hidden="true">⭐</span><b id="score">0</b></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="答题进度">
+        <div id="progress-fill"></div>
+      </div>
+
+      <div class="question-card">
+        <p class="prompt" id="prompt">接下来应该是什么图形？</p>
+        <div class="pattern" id="pattern"></div>
+      </div>
+
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+    </section>
+
+    <section id="screen-end" class="screen">
+      <div class="end-card">
+        <div class="trophy" id="end-emoji">🏆</div>
+        <h2 id="end-title">全部完成！</h2>
+        <div class="stars" id="end-stars"></div>
+        <p class="stat-line" id="end-stats"></p>
+
+        <div class="review-wrap hidden" id="review-wrap">
+          <h3>错题回顾 <span id="review-count"></span></h3>
+          <div class="review-list" id="review-list"></div>
+        </div>
+
+        <div class="end-actions">
+          <button id="btn-practice" class="btn btn-primary hidden" type="button">重练错题</button>
+          <button id="btn-again" class="btn btn-ghost" type="button">再玩一次</button>
+          <button id="btn-home" class="btn btn-ghost" type="button">回首页</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <noscript><p class="noscript">请开启 JavaScript 后再来玩哦～</p></noscript>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
